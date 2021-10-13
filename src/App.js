@@ -17,8 +17,7 @@ function App() {
         >
           Learn React
         </a>
-
-        <h1 style={{ marginTop: "2px", color: "red" }}>I am glad that Jesus loves me</h1>
+        <h1>I am glad that Jesus loves me</h1>
       </header>
     </div>
   );
