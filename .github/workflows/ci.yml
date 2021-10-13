@@ -3,6 +3,8 @@ name: CI
 on:
   pull_request:
     branches: [develop]
+  push:
+    branches: [develop]
 
 jobs:
   build:
@@ -17,4 +19,12 @@ jobs:
       - run: npm run format:check
       - run: npm test -- --coverage
         env:
-          ci: true
+          CI: true
+
+      - name: Run Build
+        if: github.event_name == 'push'
+        run: npm run build
+
+      - name: Deploy to staging
+        if: github.event_name == 'push'
+        run: npx surge --project ./build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
