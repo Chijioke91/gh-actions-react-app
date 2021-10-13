@@ -27,4 +27,4 @@ jobs:
 
       - name: Deploy to staging
         if: github.event_name == 'push'
-        run: npx surge --project ./build ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+        run: npx surge --project ./build ${{ secrets.SURGE_STAGING_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
