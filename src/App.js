@@ -17,7 +17,9 @@ function App() {
         >
           Learn React
         </a>
-        <h1>I am glad that Jesus loves me</h1>
+        <h1>
+          I am glad that <span style={{ color: "red" }}>Jesus</span> loves me
+        </h1>
       </header>
     </div>
   );
